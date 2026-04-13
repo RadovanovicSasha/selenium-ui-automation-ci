@@ -3,18 +3,18 @@ import org.openqa.selenium.WebDriver;
 
 public class FailedLogPage extends BasePage {
 
-    private final By myAccountLink = By.cssSelector("a[href*='moj-nalog']");
     private final By usernameInput = By.id("username");
     private final By passwordInput = By.id("password");
-    private final By loginButton   = By.name("login");
+    private final By loginButton = By.name("login");
     private final By errorMessage = By.cssSelector(".woocommerce-error");
 
     public FailedLogPage(WebDriver driver) {
         super(driver);
     }
 
+    // stabilno otvaranje login stranice za CI
     public void openMyAccount() {
-        driver.findElement(myAccountLink).click();
+        driver.get("https://www.militaryshop.rs/moj-nalog/");
     }
 
     public void enterUsername(String username) {
@@ -31,7 +31,6 @@ public class FailedLogPage extends BasePage {
         driver.findElement(loginButton).click();
     }
 
-    // Getter za error
     public String getErrorText() {
         return driver.findElement(errorMessage).getText();
     }
