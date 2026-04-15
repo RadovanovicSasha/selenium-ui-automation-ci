@@ -6,8 +6,8 @@ on:
       - main
 
   schedule:
-    # Every day at 07:00 UTC (~08:00 Serbia winter time)
-    - cron: '0 7 * * *'
+#    # Every day at 07:00 UTC (~08:00 Serbia winter time)
+#    - cron: '0 7 * * *'
 
 jobs:
   test:
